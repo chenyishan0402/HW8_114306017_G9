@@ -1,7 +1,32 @@
 # HW8 - 搜尋引擎
-這是一個使用 Java、Spring Boot 和 Thymeleaf 製作的搜尋網站。輸入關鍵字後，程式會呼叫 Tavily Search API，並顯示搜尋結果的標題、網址和摘要。
+HW8 作業，使用 Spring Boot 串接 **Tavily Search API** 實作自訂搜尋引擎。使用者輸入關鍵字後，系統發送查詢請求至 Tavily API，並在前端頁面展示搜尋結果標題與跳轉超連結，同時具備「查無結果」的提示防呆機制。
 
-## 組員如何下載與測試
+---
+
+## 專案架構 (Project Structure)
+
+本專案遵循標準 Spring Boot MVC 架構開發：
+
+```text
+HW8_114306017/
+├── pom.xml                        # Maven 依賴管理 (Spring Web, Thymeleaf)
+├── README.md                      # 專案說明文件
+├── src/
+│   ├── main/
+│   │   ├── java/edu/nccu/hw8/
+│   │   │   ├── Hw8114306017Application.java   # Spring Boot 啟動主類別
+│   │   │   ├── SearchController.java          # 控制器：處理前端請求與視圖路由
+│   │   │   ├── TavilySearchService.java       # 服務層：串接 Tavily API 並解析 JSON
+│   │   │   └── SearchResult.java              # Model：封裝搜尋項目（標題、網址）
+│   │   └── resources/
+│   │       ├── application.properties         # 專案設定檔 (讀取環境變數)
+│   │       ├── static/
+│   │       │   └── style.css                  # 前端視覺排版樣式
+│   │       └── templates/
+│   │           └── index.html                 # 前端搜尋介面與結果渲染 (Thymeleaf)
+│   └── test/                                  # 單元測試目錄
+
+## 如何下載與測試
 
 ### 1. 準備環境
 
