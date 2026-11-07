@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>搜尋</title>
+	<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+	<main class="page">
+		<header class="hero">
+			<p class="eyebrow">HW8 · TAVILY SEARCH</p>
+			<h1>搜尋<span>.</span></h1>
+			<p class="subtitle">輸入關鍵字，開始探索網路上的好內容。</p>
+			<form class="search-form" action="/" method="get">
+				<label class="visually-hidden" for="query">搜尋關鍵字</label>
+				<input id="query" name="query" type="search" placeholder="今天想找些什麼？"
+					   th:value="${query}" required autofocus>
+				<button type="submit">搜尋 <span aria-hidden="true">→</span></button>
+			</form>
+			<p class="powered">由 Tavily Search API 提供搜尋結果</p>
+		</header>
+
+		<section class="results" aria-live="polite" th:if="${message != null or !results.isEmpty()}">
+			<p class="result-count" th:if="${!results.isEmpty()}"
+			   th:text="|找到 ${results.size()} 筆結果|"></p>
+			<p class="notice" th:if="${message != null}" th:text="${message}"></p>
+			<article class="result-card" th:each="result : ${results}">
+				<a class="result-title" th:href="${result.url}" th:text="${result.title}"
+				   target="_blank" rel="noopener noreferrer"></a>
+				<p class="result-url" th:text="${result.url}"></p>
+				<p class="result-content" th:if="${!#strings.isEmpty(result.content)}"
+				   th:text="${result.content}"></p>
+			</article>
+		</section>
+
+		<footer>Data Structures · Fall 2026</footer>
+	</main>
+</body>
+</html>
