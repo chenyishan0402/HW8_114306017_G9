@@ -26,22 +26,6 @@ HW8_114306017/
 │   │           └── index.html                 # 前端搜尋介面與結果渲染 (Thymeleaf)
 │   └── test/                                  # 單元測試目錄
 
-## 如何下載與測試
-
-### 1. 準備環境
-
-- 安裝 **JDK 25**，並確認 PowerShell 可以執行 `java -version`，顯示版本為 25。
-- 安裝 Git。
-- 不必另外安裝 Maven；專案附有 Maven Wrapper，第一次執行時會自動下載 Maven 和所需套件。
-
-### 2. 下載專案
-
-在 PowerShell 執行：
-
-```powershell
-git clone https://github.com/chenyishan0402/HW8_114306017_G9.git
-cd HW8_114306017_G9
-```
 
 ### 3. 執行測試
 
