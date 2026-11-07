@@ -2,7 +2,7 @@
 
 使用 Spring Boot、Thymeleaf 和 Tavily Search API 製作的搜尋網站。輸入關鍵字後，頁面會顯示搜尋結果；查無結果時也會顯示提示。
 
-## 組員測試
+## 開啟/測試
 
 在 PowerShell 切換到專案資料夾。
 
