@@ -1,5 +1,4 @@
 # HW8 - 搜尋引擎
-
 這是一個使用 Java、Spring Boot 和 Thymeleaf 製作的搜尋網站。輸入關鍵字後，程式會呼叫 Tavily Search API，並顯示搜尋結果的標題、網址和摘要。
 
 ## 組員如何下載與測試
